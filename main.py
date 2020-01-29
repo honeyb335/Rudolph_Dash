@@ -8,27 +8,35 @@ RED = (255, 0, 0)
 PURPLE = (255, 0, 255)
 
 
-fullScreen = False
+res = 1920,1080
 run = True
 FPS = 60
 
 
 clock = pygame.time.Clock()
+pygame.display.set_caption('Rudolph Dash')
+background = pygame.image.load('textures/bg.jpg')
+background = pygame.transform.scale(background,(res))
+
+
+
+def redrawGameWindow():
+    window.blit(background, (0,0))
+    pygame.display.update()
 
 if run == True:
-
- if fullScreen == True:
+    #window = pygame.display.set_mode((res))
     window = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
 
- elif fullScreen == False:
-    window = pygame.display.set_mode((500, 500))
-
-
 while run:
-    for event in pygame.event.get():
-            if event.type==pygame.QUIT:
-                run = False
     clock.tick(FPS)
+               
+    for event in pygame.event.get():
+        
+        if event.type==pygame.QUIT:
+            run = False
+            
+    redrawGameWindow()
 
 
 pygame.quit()
