@@ -15,6 +15,8 @@ FPS = 60
 
 clock = pygame.time.Clock()
 pygame.display.set_caption('Rudolph Dash')
+
+
 background = pygame.image.load('textures/bg.jpg')
 background = pygame.transform.scale(background,(res))
 
