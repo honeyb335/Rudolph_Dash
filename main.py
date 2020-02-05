@@ -17,17 +17,14 @@ clock = pygame.time.Clock()
 pygame.display.set_caption('Rudolph Dash')
 
 
-background = pygame.image.load('textures/bg.jpg')
-background = pygame.transform.scale(background,(res))
-
+background = pygame.image.load('textures/bg1.jpg')
 
 
 def redrawGameWindow():
-    window.blit(background, (0,0))
+    window.blit(pygame.transform.scale(background, (res)), (0, 0))
     pygame.display.update()
 
 if run == True:
-    #window = pygame.display.set_mode((res))
     window = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
 
 while run:
