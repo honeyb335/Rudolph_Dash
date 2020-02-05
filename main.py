@@ -11,6 +11,7 @@ PURPLE = (255, 0, 255)
 res = 1920,1080
 run = True
 FPS = 60
+level = 0
 
 
 clock = pygame.time.Clock()
