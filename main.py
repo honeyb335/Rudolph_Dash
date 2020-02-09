@@ -7,24 +7,15 @@ rudolph_norm = pygame.image.load('textures/norm_rudof.png')
 background = pygame.image.load('textures/bg1.jpg')
 
 
-<<<<<<< HEAD
-res = 1366,768
-=======
 width = 1920
 hight = 1080
 #the difference between width and hight is 840
->>>>>>> e523f64878cfe61efc259f9eeed83440a91f15fb
 run = True
 FPS = 60
 vel = 5
 level = 0
-<<<<<<< HEAD
-white = (255,255,255)
-gameDisplay = pygame.display.set_mode((display_width,display_height))
-=======
 rudolph_color = 0
 rudolph_place = 0
->>>>>>> e523f64878cfe61efc259f9eeed83440a91f15fb
 
 
 clock = pygame.time.Clock()
