@@ -8,10 +8,12 @@ RED = (255, 0, 0)
 PURPLE = (255, 0, 255)
 
 
-res = 1920,1080
+res = 1366,768
 run = True
 FPS = 60
 level = 0
+white = (255,255,255)
+gameDisplay = pygame.display.set_mode((display_width,display_height))
 
 
 clock = pygame.time.Clock()
@@ -40,3 +42,14 @@ while run:
 
 
 pygame.quit()
+def game_intro():
+
+    intro = True
+
+    while intro:
+        for event in pygame.event.get():
+            print(event)
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                quit()
+        gameDisplay.fill(white)
