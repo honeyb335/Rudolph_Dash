@@ -1,43 +1,80 @@
 import pygame
+import time
 pygame.init()
 
-WHITE = (255, 255, 255)
-DARK_GREEN = (0, 100, 0)
-GREY = (210, 210 ,210)
-RED = (255, 0, 0)
-PURPLE = (255, 0, 255)
+
+rudolph_norm = pygame.image.load('textures/norm_rudof.png')
+background = pygame.image.load('textures/bg1.jpg')
 
 
+<<<<<<< HEAD
 res = 1366,768
+=======
+width = 1920
+hight = 1080
+#the difference between width and hight is 840
+>>>>>>> e523f64878cfe61efc259f9eeed83440a91f15fb
 run = True
 FPS = 60
+vel = 5
 level = 0
+<<<<<<< HEAD
 white = (255,255,255)
 gameDisplay = pygame.display.set_mode((display_width,display_height))
+=======
+rudolph_color = 0
+rudolph_place = 0
+>>>>>>> e523f64878cfe61efc259f9eeed83440a91f15fb
 
 
 clock = pygame.time.Clock()
 pygame.display.set_caption('Rudolph Dash')
 
 
-background = pygame.image.load('textures/bg1.jpg')
+class rudolph1(object):
+    def __init__(self, x, y):
+        self.vel = 20
+        self.x = x       
+        self.y = y
+
+    def draw(self,window):
+        window.blit(pygame.transform.scale(rudolph_norm, (240,240)), (self.x, self.y))
 
 
 def redrawGameWindow():
-    window.blit(pygame.transform.scale(background, (res)), (0, 0))
+    window.blit(pygame.transform.scale(background, (width,hight)), (0, 0))
+    for rudolph1 in norm_rudolphs:
+        rudolph1.draw(window)
+
     pygame.display.update()
+
 
 if run == True:
     window = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
 
+
+norm_rudolphs = []
 while run:
     clock.tick(FPS)
-               
+
+
     for event in pygame.event.get():
-        
         if event.type==pygame.QUIT:
             run = False
-            
+
+
+    for norm_rudolph in norm_rudolphs:
+       if norm_rudolph.y < 1080 and norm_rudolph.y > -1:
+           norm_rudolph.y += norm_rudolph.vel
+        else:
+            norm_rudolphs.pop(norm_rudolphs.index(norm_rudolph))
+
+
+    if len(norm_rudolphs) < 2:
+        norm_rudolphs.append(rudolph1(480,0))
+        norm_rudolphs.append(rudolph1(0,0))
+
+ 
     redrawGameWindow()
 
 
