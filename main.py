@@ -1,21 +1,14 @@
 import pygame
 import time
 from sprite_handler import rudolphs
+from sprite_handler import level_one
+from sprite_handler import level_two
+from sprite_handler import quit
 pygame.init()
 
 
-norm_rudolph = pygame.image.load('textures/norm_rudolph.png')
-indigo_rudolph = pygame.image.load('textures/indigo_rudolph.png')
-turquoise_rudolph = pygame.image.load('textures/turquoise_rudolph.png')
-jade_rudolph = pygame.image.load('textures/jade_rudolph.png')
-orange_rudolph = pygame.image.load('textures/orange_rudolph.png')
-play = pygame.image.load("textures/lv1.png")
-quit = pygame.image.load("textures/quit.png")
-two = pygame.image.load("textures/lv2.png")
-
-background2 = pygame.image.load('textures/bg2.jpg')
-background = pygame.image.load('textures/bg1.jpg')
-overlay1 = pygame.image.load('textures/overlay1.jpg')
+background1 = pygame.image.load('textures/bg2.jpg')
+background2 = pygame.image.load('textures/bg1.jpg')
 
 
 width = 1920
@@ -23,7 +16,7 @@ hight = 1080
 #the difference between width and hight is 840
 run = True
 FPS = 60
-level = 1
+level = 0
 vel = 1
 music_played=0
 
@@ -44,7 +37,7 @@ def level1():
     from level1 import vel
     if music_played==0:
         music_played = 1
-        music = pygame.mixer.music.load("data/earth.mp3")
+        music = pygame.mixer.music.load("data/Invincible.mp3")
         pygame.mixer.music.play(1)
     leveldata()
 
@@ -56,7 +49,7 @@ def level2():
     from level2 import vel
     if music_played==0:
         music_played = 1
-        music = pygame.mixer.music.load("data/earth.mp3")
+        music = pygame.mixer.music.load("data/Cartoon.mp3")
         pygame.mixer.music.play(1)
     leveldata()
 
@@ -64,11 +57,12 @@ def level2():
 
 def redrawGameWindow():
     if level==1:
-        window.blit(pygame.transform.scale(background, (width,hight)), (0, 0))
-    if level == 0:
         window.blit(pygame.transform.scale(background2, (width,hight)), (0, 0))
-        window.blit(pygame.transform.scale(play, (480,240)), (700, 300))
-        window.blit(pygame.transform.scale(two, (480,240)), (700, 600))
+
+    if level == 0:
+        window.blit(pygame.transform.scale(background1, (width,hight)), (0, 0))
+        window.blit(pygame.transform.scale(level_one, (480,240)), (700, 300))
+        window.blit(pygame.transform.scale(level_two, (480,240)), (700, 600))
         window.blit(pygame.transform.scale(quit, (480,240)), (1400, 850))
 
 

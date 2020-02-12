@@ -7,6 +7,9 @@ indigo_rudolph = pygame.image.load('textures/indigo_rudolph.png')
 turquoise_rudolph = pygame.image.load('textures/turquoise_rudolph.png')
 jade_rudolph = pygame.image.load('textures/jade_rudolph.png')
 orange_rudolph = pygame.image.load('textures/orange_rudolph.png')
+level_one = pygame.image.load("textures/lv1.png")
+quit = pygame.image.load("textures/quit.png")
+level_two = pygame.image.load("textures/lv2.png")
 
 class rudolph0(object):
     def __init__(self, x, y):
