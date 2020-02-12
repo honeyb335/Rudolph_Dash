@@ -8,7 +8,11 @@ indigo_rudolph = pygame.image.load('textures/indigo_rudolph.png')
 turquoise_rudolph = pygame.image.load('textures/turquoise_rudolph.png')
 jade_rudolph = pygame.image.load('textures/jade_rudolph.png')
 orange_rudolph = pygame.image.load('textures/orange_rudolph.png')
+play = pygame.image.load("textures/lv1.png")
+quit = pygame.image.load("textures/quit.png")
+two = pygame.image.load("textures/lv2.png")
 
+background2 = pygame.image.load('textures/bg2.jpg')
 background = pygame.image.load('textures/bg1.jpg')
 
 
@@ -76,8 +80,19 @@ class rudolph4(object):
 #def level1:
 
 
+
 def redrawGameWindow():
-    window.blit(pygame.transform.scale(background, (width,hight)), (0, 0))
+    if level==1:
+        window.blit(pygame.transform.scale(background, (width,hight)), (0, 0))
+    if level == 0:
+        window.blit(pygame.transform.scale(background2, (width,hight)), (0, 0))
+        window.blit(pygame.transform.scale(play, (480,240)), (700, 300))
+        window.blit(pygame.transform.scale(two, (480,240)), (700, 600))
+        window.blit(pygame.transform.scale(quit, (480,240)), (1400, 850))
+
+
+        
+
     for rudolph in rudolphs:
         rudolph.draw(window)
 
@@ -106,13 +121,16 @@ while run:
 
 
     if len(rudolphs) < 1:
-        rudolphs.append(rudolph4(1440,0))
-        rudolphs.append(rudolph3(960,0))
-        rudolphs.append(rudolph2(480,0))
-        rudolphs.append(rudolph1(0,0))
+        if level==1:
+
+            rudolphs.append(rudolph4(1440,0))
+            rudolphs.append(rudolph3(960,0))
+            rudolphs.append(rudolph2(480,0))
+            rudolphs.append(rudolph1(0,0))
 
  
     redrawGameWindow()
+
 
 
 pygame.quit()
