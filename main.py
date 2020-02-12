@@ -55,7 +55,7 @@ while run:
 
 
     for norm_rudolph in norm_rudolphs:
-       if norm_rudolph.y < 1080 and norm_rudolph.y > -1:
+        if norm_rudolph.y < 1080 and norm_rudolph.y > -1:
            norm_rudolph.y += norm_rudolph.vel
         else:
             norm_rudolphs.pop(norm_rudolphs.index(norm_rudolph))
