@@ -1,15 +1,11 @@
 import pygame
 import time
+from sprite_handler import rudolphs
 pygame.init()
 
 
-norm_rudolph = pygame.image.load('textures/norm_rudolph.png')
-indigo_rudolph = pygame.image.load('textures/indigo_rudolph.png')
-turquoise_rudolph = pygame.image.load('textures/turquoise_rudolph.png')
-jade_rudolph = pygame.image.load('textures/jade_rudolph.png')
-orange_rudolph = pygame.image.load('textures/orange_rudolph.png')
-
 background = pygame.image.load('textures/bg1.jpg')
+overlay1 = pygame.image.load('textures/overlay1.jpg')
 
 
 width = 1920
@@ -17,67 +13,48 @@ hight = 1080
 #the difference between width and hight is 840
 run = True
 FPS = 60
-level = 0
+level = 1
 vel = 1
+music_played=0
 
 clock = pygame.time.Clock()
 pygame.display.set_caption('Rudolph Dash')
 
 
-class rudolph0(object):
-    def __init__(self, x, y):
-        self.vel = 20
-        self.x = x       
-        self.y = y
 
-    def draw(self,window):
-        window.blit(pygame.transform.scale(norm_rudolph, (240,240)), (self.x, self.y))
+#def level_maker():
+    #if level== -1:
 
 
-class rudolph1(object):
-    def __init__(self, x, y):
-        self.vel = 20
-        self.x = x       
-        self.y = y
 
-    def draw(self,window):
-        window.blit(pygame.transform.scale(indigo_rudolph, (240,240)), (self.x, self.y))
-
-
-class rudolph2(object):
-    def __init__(self, x, y):
-        self.vel = 20
-        self.x = x       
-        self.y = y
-
-    def draw(self,window):
-        window.blit(pygame.transform.scale(turquoise_rudolph, (240,240)), (self.x, self.y))
+def level1():
+    global vel
+    global music_played
+    from level1 import leveldata
+    from level1 import vel
+    if music_played==0:
+        music_played = 1
+        music = pygame.mixer.music.load("data/earth.mp3")
+        pygame.mixer.music.play(1)
+    leveldata()
 
 
-class rudolph3(object):
-    def __init__(self, x, y):
-        self.vel = 20
-        self.x = x       
-        self.y = y
-
-    def draw(self,window):
-        window.blit(pygame.transform.scale(jade_rudolph, (240,240)), (self.x, self.y))
-
-
-class rudolph4(object):
-    def __init__(self, x, y):
-        self.vel = 20
-        self.x = x       
-        self.y = y
-
-    def draw(self,window):
-        window.blit(pygame.transform.scale(orange_rudolph, (240,240)), (self.x, self.y))
-
-#def level1:
+def level2():
+    global vel
+    global music_played
+    from level2 import leveldata
+    from level2 import vel
+    if music_played==0:
+        music_played = 1
+        music = pygame.mixer.music.load("data/earth.mp3")
+        pygame.mixer.music.play(1)
+    leveldata()
 
 
 def redrawGameWindow():
-    window.blit(pygame.transform.scale(background, (width,hight)), (0, 0))
+    if level == 1:
+        window.blit(pygame.transform.scale(background, (width,hight)), (0, 0))
+
     for rudolph in rudolphs:
         rudolph.draw(window)
 
@@ -88,7 +65,6 @@ if run == True:
     window = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
 
 
-rudolphs = []
 while run:
     clock.tick(FPS)
 
@@ -97,33 +73,23 @@ while run:
         if event.type==pygame.QUIT:
             run = False
 
-
     for rudolph in rudolphs:
-       if rudolph.y < 1080 and rudolph.y > -1:
-           rudolph.y += rudolph.vel
-       else:
+        if rudolph.y < 1080 and rudolph.y > -1:
+            rudolph.y += vel
+        else:
             rudolphs.pop(rudolphs.index(rudolph))
 
+    if level == 1:
+        level1()
 
-    if len(rudolphs) < 1:
-        rudolphs.append(rudolph4(1440,0))
-        rudolphs.append(rudolph3(960,0))
-        rudolphs.append(rudolph2(480,0))
-        rudolphs.append(rudolph1(0,0))
+    if level == 2:
+        level2()
+
+    if level < 0:
+        level_maker()
 
  
     redrawGameWindow()
 
 
 pygame.quit()
-def game_intro():
-
-    intro = True
-
-    while intro:
-        for event in pygame.event.get():
-            print(event)
-            if event.type == pygame.QUIT:
-                pygame.quit()
-                quit()
-        gameDisplay.fill(white)
