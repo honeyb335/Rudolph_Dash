@@ -7,5 +7,5 @@ vel = 20
 
 
 def leveldata():
-    if len(rudolphs) > 1:
+    if len(rudolphs) < 1:
         rudolphs.append(rudolph4(1440,0))
