@@ -47,7 +47,42 @@ pygame.display.set_caption('Rudolph Dash')
 
 def level_maker():
     if level== -1:
-        pass
+        for event in pygame.event.get():
+            if event.type==pygame.QUIT:
+                pygame.quit()
+                quit()
+            if event.type == pygame.KEYDOWN and level > 0:
+                start = time.time()
+
+                if event.key == pygame.K_a:
+                    with open('level1.txt','a') as f:
+                        f.write(        rudolphs.append(rudolph4(0,0)))
+                        stop = time.time()
+                        together = (stop-start)
+                        f.write(        time.sleep(stop))
+                        print('button')
+
+                if event.key == pygame.K_s:
+                    pass
+
+                if event.key == pygame.K_d:
+                    pass
+
+                if event.key == pygame.K_f:
+                    pass
+
+                if event.key == pygame.K_j:
+                    pass
+            
+                if event.key == pygame.K_k:
+                    pass
+        
+                if event.key == pygame.K_l:
+                    pass
+            
+                if event.key == pygame.K_SEMICOLON:
+                    pass
+
 
 
 
@@ -241,6 +276,40 @@ while run:
 
 
     for event in pygame.event.get():
+        if level== -1:
+            start = time.time()
+            if event.type == pygame.KEYDOWN:
+            
+
+                if event.key == pygame.K_a:
+                    with open('level1.txt','a') as f:
+                        stop = time.time()
+                        together = (stop-start)
+                        f.write(f"        time.sleep({together})\n")
+                        f.write("        rudolphs.append(rudolph4(0,0))\n")
+                        print('button')
+                        start = time.time()
+
+                if event.key == pygame.K_s:
+                    pass
+
+                if event.key == pygame.K_d:
+                    pass
+
+                if event.key == pygame.K_f:
+                    pass
+
+                if event.key == pygame.K_j:
+                    pass
+            
+                if event.key == pygame.K_k:
+                    pass
+        
+                if event.key == pygame.K_l:
+                    pass
+            
+                if event.key == pygame.K_SEMICOLON:
+                    pass
         if event.type == pygame.KEYDOWN and level > 0:
             for rudolph in rudolphs:
 
@@ -367,8 +436,8 @@ while run:
     if level == 2:
         level2()
 
-    if level < 0:
-        level_maker()
+    #if level < 0:
+        #level_maker()
 
     if level == 0:
         for rudolph in rudolphs:

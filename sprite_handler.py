@@ -35,7 +35,7 @@ large_font = pygame.font.Font(None,200)
 font = pygame.font.Font(None, 85)
 window = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
 
-level = 0
+level = -1
 #color = 1
 
 class rudolph0(object):
