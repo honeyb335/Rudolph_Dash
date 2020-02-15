@@ -4,7 +4,7 @@ pygame.init()
 rudolphs = []
 
 norm_rudolph = pygame.image.load('textures/norm_rudolph.png')
-indigo_rudolph = pygame.image.load('textures/indigo_rudolph.png')
+#indigo_rudolph = pygame.image.load('textures/indigo_rudolph.png')
 turquoise_rudolph = pygame.image.load('textures/turquoise_rudolph.png')
 jade_rudolph = pygame.image.load('textures/jade_rudolph.png')
 orange_rudolph = pygame.image.load('textures/orange_rudolph.png')
