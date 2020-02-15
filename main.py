@@ -277,45 +277,88 @@ while run:
 
     for event in pygame.event.get():
         if level== -1:
-            start = time.time()
-            #start_val = 1
+            #start = time.time()
+            start_val = 1
             #if start_val == 1:
                 #start = time.time()
                 #start_val = 0
-            if event.type == pygame.KEYUP: 
-                start = time.time()
+            #if event.type == pygame.KEYUP: 
+                #start = time.time()
             if event.type == pygame.KEYDOWN:
             
 
                 if event.key == pygame.K_a:
                     with open('level1.txt','a') as f:
                         stop = time.time()
-                        together = (stop-start)
+                        together = (start-stop)
                         f.write(f"        time.sleep({together})\n")
                         f.write("        rudolphs.append(rudolph4(0,0))\n")
                         print(together)
                         #start = time.time()
 
                 if event.key == pygame.K_s:
-                    pass
+                    with open('level1.txt','a') as f:
+                        stop = time.time()
+                        together = (start-stop)
+                        f.write(f"        time.sleep({together})\n")
+                        f.write("        rudolphs.append(rudolph4(240,0))\n")
+                        print(together)
+                        #start = time.time()
 
                 if event.key == pygame.K_d:
-                    pass
+                    with open('level1.txt','a') as f:
+                        stop = time.time()
+                        together = (start-stop)
+                        f.write(f"        time.sleep({together})\n")
+                        f.write("        rudolphs.append(rudolph4(480,0))\n")
+                        print(together)
+                        #start = time.time()
 
                 if event.key == pygame.K_f:
-                    pass
+                    with open('level1.txt','a') as f:
+                        stop = time.time()
+                        together = (start-stop)
+                        f.write(f"        time.sleep({together})\n")
+                        f.write("        rudolphs.append(rudolph4(720,0))\n")
+                        print(together)
+                        #start = time.time()
 
                 if event.key == pygame.K_j:
-                    pass
+                    with open('level1.txt','a') as f:
+                        stop = time.time()
+                        together = (start-stop)
+                        f.write(f"        time.sleep({together})\n")
+                        f.write("        rudolphs.append(rudolph4(960,0))\n")
+                        print(together)
+                        #start = time.time()
             
                 if event.key == pygame.K_k:
-                    pass
+                    with open('level1.txt','a') as f:
+                        stop = time.time()
+                        #together = (start-stop)
+                        f.write(f"        time.sleep({together})\n")
+                        f.write("        rudolphs.append(rudolph4(1200,0))\n")
+                        print(together)
+                        #start = time.time()
         
                 if event.key == pygame.K_l:
-                    pass
+                    with open('level1.txt','a') as f:
+                        stop = time.time()
+                        together = (start-stop)
+                        f.write(f"        time.sleep({together})\n")
+                        f.write("        rudolphs.append(rudolph4(1440,0))\n")
+                        print(together)
+                        #start = time.time()
             
                 if event.key == pygame.K_SEMICOLON:
-                    pass
+                    with open('level1.txt','a') as f:
+                        stop = time.time()
+                        together = (start-stop)
+                        f.write(f"        time.sleep({together})\n")
+                        f.write("        rudolphs.append(rudolph4(1680,0))\n")
+                        print(together)
+                        #start = time.time()
+
         if event.type == pygame.KEYDOWN and level > 0:
             for rudolph in rudolphs:
 
