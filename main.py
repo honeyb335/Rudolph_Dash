@@ -58,7 +58,7 @@ def level_maker():
                     with open('level1.txt','a') as f:
                         f.write(        rudolphs.append(rudolph4(0,0)))
                         stop = time.time()
-                        together = (stop-start)
+                        together = (start-stop)
                         f.write(        time.sleep(stop))
                         print('button')
 
@@ -278,6 +278,12 @@ while run:
     for event in pygame.event.get():
         if level== -1:
             start = time.time()
+            #start_val = 1
+            #if start_val == 1:
+                #start = time.time()
+                #start_val = 0
+            if event.type == pygame.KEYUP: 
+                start = time.time()
             if event.type == pygame.KEYDOWN:
             
 
@@ -287,8 +293,8 @@ while run:
                         together = (stop-start)
                         f.write(f"        time.sleep({together})\n")
                         f.write("        rudolphs.append(rudolph4(0,0))\n")
-                        print('button')
-                        start = time.time()
+                        print(together)
+                        #start = time.time()
 
                 if event.key == pygame.K_s:
                     pass
